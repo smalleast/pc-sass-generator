@@ -3,7 +3,7 @@
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        line-height: #{$i/50}px;
+        line-height: #{$i}px;
       }
     }
   }

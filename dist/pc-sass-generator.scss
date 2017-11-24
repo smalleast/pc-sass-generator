@@ -68,7 +68,7 @@
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        font-size: #{$i/50}px;
+        font-size: #{$i}px;
       }
     }
   }
@@ -112,7 +112,7 @@
   #{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
-        line-height: #{$i/50}px;
+        line-height: #{$i}px;
       }
     }
   }
