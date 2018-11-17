@@ -1,4 +1,6 @@
+
 /*line-clamp Start*/
+
 .line-clamp {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -6,6 +8,14 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
 }
+
+.line-wrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
 @mixin line-clamp($inLine) {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -15,13 +25,19 @@
   -webkit-box-orient: vertical;
 }
 
-
-@mixin generator-line-clamp($inList,$inPrefix:'.lc-'){
+@mixin generator-line-clamp($inList, $inPrefix:'.lc-') {
   #{$inPrefix} {
-    @each $i in $inList{
-      &#{$i}{
-        -webkit-line-clamp: $i;
-        @extend .line-clamp;
+    @each $i in $inList {
+      @if $i=='wrap' {
+        &#{$i} {
+          @extend .line-wrap;
+        }
+      }
+      @else {
+        &#{$i} {
+          -webkit-line-clamp: $i;
+          @extend .line-clamp;
+        }
       }
     }
   }

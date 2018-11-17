@@ -1,6 +1,14 @@
 /*line Start*/
-@mixin generator-line($inList,$inColor:#ddd,$inPrefix:'.line-') {
-  #{$inPrefix} {
+
+.blank {
+  display: block;
+  font-size: 0;
+  overflow: hidden;
+  clear: both;
+}
+
+@mixin generator-line($inList, $inColor:#ddd, $inPrefix:'line-') {
+  .#{$inPrefix} {
     @each $i in $inList {
       &#{$i} {
         height: #{$i}px;
@@ -10,4 +18,5 @@
     }
   }
 }
+
 /*line End*/

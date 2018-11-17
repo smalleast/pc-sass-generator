@@ -20,8 +20,5 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "yargs": "^4.7.1"
-  },
-  "dependencies": {
-    "node-sass": "^4.5.3"
   }
 }
